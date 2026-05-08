@@ -5,51 +5,158 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Slide Training</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<!-- FINAL FONT (đẹp nhất cho tiếng Việt) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f5f5f5;color:#111}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Be Vietnam Pro',sans-serif}
 
-.container{max-width:1200px;margin:auto;padding:0 20px}
+body{
+  background:#f5f5f5;
+  color:#111;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container{max-width:1200px;margin:auto;padding:0 24px}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:#fff}
-nav img{height:40px}
-nav ul{display:flex;gap:30px;list-style:none}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+  background:#fff;
+}
+nav img{height:42px}
+nav ul{display:flex;gap:32px;list-style:none}
 nav a{font-weight:500}
-.cta{background:#E30613;color:#fff;padding:10px 20px;border-radius:30px;font-weight:600}
+.cta{
+  background:#E30613;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:600;
+  transition:.2s;
+}
+.cta:hover{transform:scale(1.05)}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,#E30613,#B30000);color:#fff;padding:80px 0}
-.hero-wrap{display:flex;align-items:center;gap:50px;flex-wrap:wrap}
-.hero-text{flex:1}
-.hero-text h1{font-size:56px;font-weight:800;line-height:1.2;margin-bottom:20px}
-.hero-text p{font-size:18px;opacity:.9;margin-bottom:25px}
-.hero-btns{display:flex;gap:15px}
-.btn-primary{background:#fff;color:#E30613;padding:14px 24px;border-radius:30px;font-weight:700}
-.btn-outline{border:2px solid #fff;padding:12px 22px;border-radius:30px}
+.hero{
+  background:linear-gradient(135deg,#E30613,#B30000);
+  color:#fff;
+  padding:100px 0;
+}
 
-.hero-card{flex:1;background:rgba(255,255,255,0.1);padding:30px;border-radius:20px;backdrop-filter:blur(10px)}
-.hero-card img{width:100%;border-radius:12px;margin-bottom:20px}
-.hero-card p{margin:10px 0;font-weight:500}
+.hero-wrap{
+  display:flex;
+  align-items:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+.hero-text{flex:1}
+
+.hero-text h1{
+  font-size:60px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:-1px;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  font-size:18px;
+  opacity:.95;
+  margin-bottom:30px;
+}
+
+.hero-btns{display:flex;gap:16px}
+
+.btn-primary{
+  background:#fff;
+  color:#E30613;
+  padding:16px 28px;
+  border-radius:40px;
+  font-weight:700;
+}
+
+.btn-outline{
+  border:2px solid #fff;
+  padding:14px 26px;
+  border-radius:40px;
+}
+
+.hero-card{
+  flex:1;
+  background:rgba(255,255,255,0.12);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(14px);
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.hero-card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+.hero-card p{margin:10px 0}
 
 /* STATS */
-.stats{background:#fff;margin-top:-40px;border-radius:20px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.stat b{font-size:20px}
+.stats{
+  background:#fff;
+  margin-top:-60px;
+  border-radius:20px;
+  padding:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+.stat b{font-size:22px}
 
 /* SECTION */
-section{padding:70px 0}
-h2{font-size:36px;font-weight:700;margin-bottom:20px}
-.grid{display:grid;gap:20px}
-.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+section{padding:80px 0}
 
-footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px}
+h2{
+  font-size:40px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.grid{display:grid;gap:24px}
+
+.grid-3{
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.card{
+  background:#fff;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:30px;
+}
 
 @media(max-width:768px){
-.hero-text h1{font-size:36px}
+.hero-text h1{font-size:38px}
 }
+
 </style>
 </head>
 <body>
@@ -62,7 +169,7 @@ footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px
 <li>Quyền lợi</li>
 <li>Đăng ký</li>
 </ul>
-<a class="cta" href="#">Đăng ký ngay</a>
+<a class="cta">Đăng ký ngay</a>
 </nav>
 
 <div class="hero">
@@ -80,7 +187,7 @@ footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px
 <div class="hero-card">
 <img src="assets/logo.png">
 <p><b>Thời gian:</b> 08h30 – 12h00</p>
-<p><b>Ngày:</b> 08/05/2026</p>
+<p><b>Ngày:</b> 20/05/2026</p>
 <p><b>Hình thức:</b> Online + Offline</p>
 <p><b>Địa điểm:</b> Tòa nhà Thái Bình / Zoom</p>
 </div>
@@ -96,29 +203,29 @@ footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px
 </div>
 
 <section class="container">
-<h2>Mục tiêu chương trình</h2>
+<h2>Ứng dụng AI vào công việc thực tế</h2>
 <div class="grid grid-3">
 <div class="card">Tạo slide nhanh bằng AI</div>
 <div class="card">Chuẩn hóa nội dung chuyên nghiệp</div>
-<div class="card">Ứng dụng vào công việc thực tế</div>
+<div class="card">Có sản phẩm sau khóa học</div>
 </div>
 </section>
 
 <section class="container">
 <h2>Nội dung đào tạo</h2>
 <div class="card">
-<p><b>Phần cơ bản:</b> Tạo slide bằng Claude, Gemini, Canva</p>
-<p><b>Phần nâng cao:</b> Xây dựng Skill, tạo báo cáo</p>
-<p><b>Landing Page:</b> Thiết kế và publish bằng GitHub</p>
+<p><b>Phần cơ bản:</b> Claude, Gemini, Canva</p>
+<p><b>Phần nâng cao:</b> Skill AI, báo cáo</p>
+<p><b>Landing Page:</b> HTML + GitHub</p>
 </div>
 </section>
 
 <section class="container">
 <h2>Đăng ký tham gia</h2>
 <div class="card">
-<p>Liên hệ: Mai Ngọc Minh</p>
-<p>0989 208 017</p>
-<p>minhmn@viettel.com.vn</p>
+<p>LÝ DUY CƯỜNG</p>
+<p>0988 089 040</p>
+<p>cuongld3@viettel.com.vn</p>
 </div>
 </section>
 
