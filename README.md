@@ -6,52 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đào tạo Slide bằng AI</title>
 
+  <!-- Google Font đẹp hơn -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       background: #f5f5f5;
       color: #111;
     }
 
     header {
-      background: #E30613;
+      background: linear-gradient(135deg, #E30613, #B30000);
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
     }
 
     header p {
       font-size: 18px;
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
+      opacity: 0.9;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
+      margin-top: 25px;
+      padding: 14px 24px;
       background: white;
       color: #E30613;
-      font-weight: bold;
-      border-radius: 6px;
+      font-weight: 700;
+      border-radius: 8px;
       text-decoration: none;
     }
 
+    .hero-img {
+      margin-top: 30px;
+      max-width: 400px;
+      width: 100%;
+    }
+
     section {
-      padding: 50px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
       color: #E30613;
       margin-bottom: 20px;
+      font-size: 32px;
+      font-weight: 700;
     }
 
     .grid {
@@ -65,9 +78,10 @@
 
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      font-weight: 500;
     }
 
     footer {
@@ -83,6 +97,10 @@
 <header>
   <h1>Hướng dẫn tạo Slide bằng AI</h1>
   <p>Ứng dụng AI để tạo slide, landing page và phục vụ công việc hàng ngày</p>
+
+  <!-- FIX ẢNH: đặt đúng đường dẫn -->
+  <img src="assets/logo.png" alt="Viettel" class="hero-img">
+
   <a class="btn" href="#contact">Đăng ký ngay</a>
 </header>
 
@@ -128,3 +146,4 @@
 
 </body>
 </html>
+
