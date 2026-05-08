@@ -2,146 +2,129 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đào tạo Slide bằng AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slide Training</title>
 
-  <!-- Google Font đẹp hơn -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: #f5f5f5;
-      color: #111;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f5f5f5;color:#111}
 
-    header {
-      background: linear-gradient(135deg, #E30613, #B30000);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
+.container{max-width:1200px;margin:auto;padding:0 20px}
 
-    header h1 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:#fff}
+nav img{height:40px}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{font-weight:500}
+.cta{background:#E30613;color:#fff;padding:10px 20px;border-radius:30px;font-weight:600}
 
-    header p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: auto;
-      opacity: 0.9;
-    }
+/* HERO */
+.hero{background:linear-gradient(135deg,#E30613,#B30000);color:#fff;padding:80px 0}
+.hero-wrap{display:flex;align-items:center;gap:50px;flex-wrap:wrap}
+.hero-text{flex:1}
+.hero-text h1{font-size:56px;font-weight:800;line-height:1.2;margin-bottom:20px}
+.hero-text p{font-size:18px;opacity:.9;margin-bottom:25px}
+.hero-btns{display:flex;gap:15px}
+.btn-primary{background:#fff;color:#E30613;padding:14px 24px;border-radius:30px;font-weight:700}
+.btn-outline{border:2px solid #fff;padding:12px 22px;border-radius:30px}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 24px;
-      background: white;
-      color: #E30613;
-      font-weight: 700;
-      border-radius: 8px;
-      text-decoration: none;
-    }
+.hero-card{flex:1;background:rgba(255,255,255,0.1);padding:30px;border-radius:20px;backdrop-filter:blur(10px)}
+.hero-card img{width:100%;border-radius:12px;margin-bottom:20px}
+.hero-card p{margin:10px 0;font-weight:500}
 
-    .hero-img {
-      margin-top: 30px;
-      max-width: 400px;
-      width: 100%;
-    }
+/* STATS */
+.stats{background:#fff;margin-top:-40px;border-radius:20px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.stat b{font-size:20px}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* SECTION */
+section{padding:70px 0}
+h2{font-size:36px;font-weight:700;margin-bottom:20px}
+.grid{display:grid;gap:20px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
 
-    h2 {
-      color: #E30613;
-      margin-bottom: 20px;
-      font-size: 32px;
-      font-weight: 700;
-    }
+footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px}
 
-    .grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      font-weight: 500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #111;
-      color: white;
-    }
-  </style>
+@media(max-width:768px){
+.hero-text h1{font-size:36px}
+}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Hướng dẫn tạo Slide bằng AI</h1>
-  <p>Ứng dụng AI để tạo slide, landing page và phục vụ công việc hàng ngày</p>
+<nav class="container">
+<img src="assets/logo.png">
+<ul>
+<li>Mục tiêu</li>
+<li>Nội dung</li>
+<li>Quyền lợi</li>
+<li>Đăng ký</li>
+</ul>
+<a class="cta" href="#">Đăng ký ngay</a>
+</nav>
 
-  <!-- FIX ẢNH: đặt đúng đường dẫn -->
-  <img src="assets/logo.png" alt="Viettel" class="hero-img">
+<div class="hero">
+<div class="container hero-wrap">
 
-  <a class="btn" href="#contact">Đăng ký ngay</a>
-</header>
+<div class="hero-text">
+<h1>Hướng dẫn tạo Slide bằng AI<br>Cơ bản & Nâng cao</h1>
+<p>Trang bị kỹ năng sử dụng AI để tạo slide, thiết kế landing page và ứng dụng vào công việc hàng ngày.</p>
+<div class="hero-btns">
+<a class="btn-primary">Đăng ký tham gia</a>
+<a class="btn-outline">Xem nội dung</a>
+</div>
+</div>
 
-<section>
-  <h2>Mục tiêu chương trình</h2>
-  <div class="grid grid-3">
-    <div class="card">Tạo slide nhanh bằng AI</div>
-    <div class="card">Chuẩn hóa nội dung</div>
-    <div class="card">Ứng dụng thực tế vào công việc</div>
-  </div>
+<div class="hero-card">
+<img src="assets/logo.png">
+<p><b>Thời gian:</b> 08h30 – 12h00</p>
+<p><b>Ngày:</b> 08/05/2026</p>
+<p><b>Hình thức:</b> Online + Offline</p>
+<p><b>Địa điểm:</b> Tòa nhà Thái Bình / Zoom</p>
+</div>
+
+</div>
+</div>
+
+<div class="container stats">
+<div class="stat"><b>3,5 giờ</b><br>Thời lượng</div>
+<div class="stat"><b>Slide + Landing Page</b><br>Đầu ra</div>
+<div class="stat"><b>7/10</b><br>Điểm đạt</div>
+<div class="stat"><b>06/05/2026</b><br>Hạn đăng ký</div>
+</div>
+
+<section class="container">
+<h2>Mục tiêu chương trình</h2>
+<div class="grid grid-3">
+<div class="card">Tạo slide nhanh bằng AI</div>
+<div class="card">Chuẩn hóa nội dung chuyên nghiệp</div>
+<div class="card">Ứng dụng vào công việc thực tế</div>
+</div>
 </section>
 
-<section>
-  <h2>Nội dung đào tạo</h2>
-  <div class="card">
-    <p><b>Phần cơ bản:</b> Tạo slide bằng AI (Claude, Gemini, Canva)</p>
-    <p><b>Phần nâng cao:</b> Xây dựng Skill, tạo báo cáo</p>
-    <p><b>Landing Page:</b> Thiết kế & publish bằng GitHub</p>
-  </div>
+<section class="container">
+<h2>Nội dung đào tạo</h2>
+<div class="card">
+<p><b>Phần cơ bản:</b> Tạo slide bằng Claude, Gemini, Canva</p>
+<p><b>Phần nâng cao:</b> Xây dựng Skill, tạo báo cáo</p>
+<p><b>Landing Page:</b> Thiết kế và publish bằng GitHub</p>
+</div>
 </section>
 
-<section>
-  <h2>Thông tin khóa học</h2>
-  <div class="card">
-    <p><b>Thời gian:</b> 08h30 - 12h00</p>
-    <p><b>Ngày:</b> 08/05/2026</p>
-    <p><b>Hình thức:</b> Online + Offline</p>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Đăng ký tham gia</h2>
-  <div class="card">
-    <p>Liên hệ: Mai Ngọc Minh</p>
-    <p>Điện thoại: 0989 208 017</p>
-    <p>Email: minhmn@viettel.com.vn</p>
-  </div>
+<section class="container">
+<h2>Đăng ký tham gia</h2>
+<div class="card">
+<p>Liên hệ: Mai Ngọc Minh</p>
+<p>0989 208 017</p>
+<p>minhmn@viettel.com.vn</p>
+</div>
 </section>
 
 <footer>
-  © 2026 Viettel Networks
+© 2026 Viettel Networks
 </footer>
 
 </body>
