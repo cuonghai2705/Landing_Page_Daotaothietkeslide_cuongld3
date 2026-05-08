@@ -1,156 +1,130 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Chương trình đào tạo nội bộ Viettel Networks: Hướng dẫn tạo Slide bằng AI Cơ bản & Nâng cao." />
-  <title>Hướng dẫn tạo Slide bằng AI | Viettel Networks</title>
-  <style>
-    :root{
-      --red:#E30613;--red-dark:#B30000;--black:#0A0A0A;--dark:#1A1A1A;--gray:#4A4A4A;--gray-2:#7F7F7F;--gray-3:#CCCCCC;--bg:#F5F5F5;--white:#fff;
-      --radius:22px;--shadow:0 18px 50px rgba(10,10,10,.10)
-    }
-    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
-    body{font-family:Roboto,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--black);line-height:1.65}
-    a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}.section{padding:80px 0}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--red)}
-    h1,h2,h3{letter-spacing:-.035em;line-height:1.12} h1{font-size:clamp(40px,7vw,76px);font-weight:900} h2{font-size:clamp(30px,4vw,46px);margin-top:10px;margin-bottom:16px} h3{font-size:24px;margin-bottom:12px}.muted{color:var(--gray)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 22px;font-weight:800;border:2px solid transparent;transition:.2s ease;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-dark)}.btn-white{background:#fff;color:var(--red)}.btn-outline{border-color:#fff;color:#fff}.btn-dark-outline{border-color:#ddd;color:var(--black);background:#fff}.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
-    .nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);z-index:20;border-bottom:1px solid #eee}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{height:42px;width:auto}.menu{display:flex;gap:24px;font-size:14px;font-weight:700;color:var(--gray)}.menu a:hover{color:var(--red)}
-    .hero{background:radial-gradient(circle at top right,rgba(255,255,255,.18),transparent 32%),linear-gradient(135deg,var(--red),#c40000 52%,#8f0000);color:#fff;padding:92px 0 72px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}.hero p{font-size:20px;max-width:720px;margin-top:22px;color:rgba(255,255,255,.9)}.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:32px;padding:28px;box-shadow:var(--shadow)}.hero-card img{width:100%;border-radius:20px;background:#fff;padding:26px;margin-bottom:22px}.info-list{display:grid;gap:14px}.info-list div{display:flex;justify-content:space-between;gap:18px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:12px}.info-list span{color:rgba(255,255,255,.72)}.info-list strong{text-align:right}
-    .quick-info{margin-top:-42px;position:relative;z-index:5}.quick-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}.quick-item{padding:26px;border-right:1px solid #eee}.quick-item:last-child{border-right:0}.quick-item span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-2);font-weight:800}.quick-item b{display:block;margin-top:6px;font-size:18px}
-    .grid{display:grid;gap:24px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}.card{background:#fff;border:1px solid #e9e9e9;border-radius:var(--radius);padding:28px;box-shadow:0 10px 28px rgba(10,10,10,.05)}.icon{width:48px;height:48px;border-radius:16px;background:#FFE8EA;color:var(--red);display:grid;place-items:center;font-size:24px;font-weight:900;margin-bottom:18px}.card ul{padding-left:20px}.card li{margin:8px 0;color:var(--gray)}
-    .dark{background:var(--black);color:#fff}.dark .muted,.dark li{color:#d7d7d7}.dark .card{background:#161616;border-color:#2a2a2a}.score{font-size:54px;font-weight:900;color:var(--red);line-height:1;margin-bottom:12px}.steps{counter-reset:step;display:grid;gap:18px}.step{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:start}.step:before{counter-increment:step;content:counter(step);width:72px;height:72px;border-radius:22px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900}
-    .contact{background:linear-gradient(135deg,#fff,#fff5f5);border:1px solid #ffd6d9;border-radius:32px;padding:40px;display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}.deadline{display:inline-block;margin-top:18px;background:#FFE8EA;color:var(--red-dark);padding:12px 16px;border-radius:14px;font-weight:900}.contact-box{display:grid;gap:10px;font-weight:700;color:var(--gray)}
-    footer{background:#fff;border-top:1px solid #eee;padding:34px 0;color:var(--gray)}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-inner img{height:38px}.note{font-size:13px;color:var(--gray-2);margin-top:10px}
-    @media(max-width:900px){.menu{display:none}.hero-grid,.grid-3,.grid-2,.quick-card,.contact{grid-template-columns:1fr}.quick-item{border-right:0;border-bottom:1px solid #eee}.section{padding:56px 0}.hero{padding:64px 0}.footer-inner{align-items:flex-start;flex-direction:column}.step{grid-template-columns:56px 1fr}.step:before{width:56px;height:56px;border-radius:18px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Slide Training</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#f5f5f5;color:#111}
+
+.container{max-width:1200px;margin:auto;padding:0 20px}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:#fff}
+nav img{height:40px}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{font-weight:500}
+.cta{background:#E30613;color:#fff;padding:10px 20px;border-radius:30px;font-weight:600}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#E30613,#B30000);color:#fff;padding:80px 0}
+.hero-wrap{display:flex;align-items:center;gap:50px;flex-wrap:wrap}
+.hero-text{flex:1}
+.hero-text h1{font-size:56px;font-weight:800;line-height:1.2;margin-bottom:20px}
+.hero-text p{font-size:18px;opacity:.9;margin-bottom:25px}
+.hero-btns{display:flex;gap:15px}
+.btn-primary{background:#fff;color:#E30613;padding:14px 24px;border-radius:30px;font-weight:700}
+.btn-outline{border:2px solid #fff;padding:12px 22px;border-radius:30px}
+
+.hero-card{flex:1;background:rgba(255,255,255,0.1);padding:30px;border-radius:20px;backdrop-filter:blur(10px)}
+.hero-card img{width:100%;border-radius:12px;margin-bottom:20px}
+.hero-card p{margin:10px 0;font-weight:500}
+
+/* STATS */
+.stats{background:#fff;margin-top:-40px;border-radius:20px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.stat b{font-size:20px}
+
+/* SECTION */
+section{padding:70px 0}
+h2{font-size:36px;font-weight:700;margin-bottom:20px}
+.grid{display:grid;gap:20px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+
+footer{background:#111;color:#fff;text-align:center;padding:30px;margin-top:40px}
+
+@media(max-width:768px){
+.hero-text h1{font-size:36px}
+}
+</style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#top"><img class="logo" src="assets/logo-light-bg.png" alt="Viettel Networks"></a>
-      <div class="menu"><a href="#muc-tieu">Mục tiêu</a><a href="#noi-dung">Nội dung</a><a href="#quyen-loi">Quyền lợi</a><a href="#dang-ky">Đăng ký</a></div>
-      <a class="btn btn-red" href="#dang-ky">Đăng ký ngay</a>
-    </div>
-  </nav>
 
-  <header class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow" style="color:#fff">Chương trình đào tạo nội bộ</div>
-        <h1>Hướng dẫn tạo Slide bằng AI Cơ bản & Nâng cao</h1>
-        <p>Trang bị kỹ năng sử dụng AI để tạo slide, thiết kế landing page và ứng dụng trực tiếp vào công việc hàng ngày.</p>
-        <div class="cta-row"><a class="btn btn-white" href="#dang-ky">Đăng ký tham gia</a><a class="btn btn-outline" href="#noi-dung">Xem nội dung chương trình</a></div>
-      </div>
-      <div class="hero-card">
-        <img src="assets/logo-red-bg.png" alt="Viettel Networks logo trên nền đỏ">
-        <div class="info-list">
-          <div><span>Thời gian</span><strong>08h30 – 12h00</strong></div>
-          <div><span>Ngày</span><strong>08/05/2026</strong></div>
-          <div><span>Hình thức</span><strong>Online + Offline</strong></div>
-          <div><span>Địa điểm</span><strong>Tầng G – Tòa nhà Thái Bình / Zoom</strong></div>
-        </div>
-      </div>
-    </div>
-  </header>
+<nav class="container">
+<img src="assets/logo.png">
+<ul>
+<li>Mục tiêu</li>
+<li>Nội dung</li>
+<li>Quyền lợi</li>
+<li>Đăng ký</li>
+</ul>
+<a class="cta" href="#">Đăng ký ngay</a>
+</nav>
 
-  <div class="container quick-info">
-    <div class="quick-card">
-      <div class="quick-item"><span>Thời lượng</span><b>3,5 giờ</b></div>
-      <div class="quick-item"><span>Đầu ra</span><b>Slide AI + Landing Page</b></div>
-      <div class="quick-item"><span>Điểm đạt</span><b>Tối thiểu 7/10</b></div>
-      <div class="quick-item"><span>Hạn đăng ký</span><b>06/05/2026</b></div>
-    </div>
-  </div>
+<div class="hero">
+<div class="container hero-wrap">
 
-  <section class="section" id="muc-tieu">
-    <div class="container">
-      <div class="eyebrow">Mục tiêu chương trình</div><h2>Ứng dụng AI vào slide, landing page và công việc thực tế</h2>
-      <p class="muted">Khóa học giúp CBCNV biết cách xây dựng nội dung rõ ràng, sử dụng các công cụ AI để tạo slide và phát triển sản phẩm phục vụ công việc hàng ngày.</p>
-      <div class="grid grid-3" style="margin-top:32px">
-        <div class="card"><div class="icon">AI</div><h3>Tạo slide bằng AI</h3><p class="muted">Hướng dẫn sử dụng Claude, Gemini, NotebookLM và các công cụ phù hợp để tạo slide từ nội dung hoặc ý tưởng sẵn có.</p></div>
-        <div class="card"><div class="icon">✓</div><h3>Chuẩn hóa nội dung</h3><p class="muted">Biết cách xây dựng tài liệu chuẩn, có cấu trúc rõ ràng để AI xử lý hiệu quả hơn.</p></div>
-        <div class="card"><div class="icon">↗</div><h3>Có sản phẩm sau khóa học</h3><p class="muted">Học viên hoàn thành sản phẩm slide bằng AI và có thể thực hiện thêm landing page.</p></div>
-      </div>
-    </div>
-  </section>
+<div class="hero-text">
+<h1>Hướng dẫn tạo Slide bằng AI<br>Cơ bản & Nâng cao</h1>
+<p>Trang bị kỹ năng sử dụng AI để tạo slide, thiết kế landing page và ứng dụng vào công việc hàng ngày.</p>
+<div class="hero-btns">
+<a class="btn-primary">Đăng ký tham gia</a>
+<a class="btn-outline">Xem nội dung</a>
+</div>
+</div>
 
-  <section class="section" id="doi-tuong" style="background:#fff">
-    <div class="container grid grid-2">
-      <div><div class="eyebrow">Đối tượng</div><h2>Dành cho CBCNV Viettel Networks</h2><p class="muted">Phù hợp với CBCNV cần chứng nhận hoàn thành khóa Slide cơ bản và nâng cao để đáp ứng KNL, hoặc có nhu cầu tìm hiểu ứng dụng AI trong công việc hàng ngày.</p></div>
-      <div class="card"><h3>Yêu cầu đầu vào</h3><ul><li>Có máy tính để tham gia thực hành.</li><li>Ưu tiên chuẩn bị sẵn tài khoản AI có phí như Gemini, Claude, Canva...</li></ul></div>
-    </div>
-  </section>
+<div class="hero-card">
+<img src="assets/logo.png">
+<p><b>Thời gian:</b> 08h30 – 12h00</p>
+<p><b>Ngày:</b> 08/05/2026</p>
+<p><b>Hình thức:</b> Online + Offline</p>
+<p><b>Địa điểm:</b> Tòa nhà Thái Bình / Zoom</p>
+</div>
 
-  <section class="section" id="noi-dung">
-    <div class="container">
-      <div class="eyebrow">Nội dung đào tạo</div><h2>Học từ nền tảng cơ bản đến ứng dụng nâng cao</h2>
-      <div class="grid grid-3" style="margin-top:32px">
-        <div class="card"><h3>1. Tạo slide từ nội dung sẵn có</h3><ul><li>Xây dựng tài liệu chuẩn, có cấu trúc rõ ràng.</li><li>Sử dụng AI để làm slide theo nhận diện thương hiệu Viettel.</li><li>Tinh chỉnh slide bằng Claude for PowerPoint, Canva...</li></ul></div>
-        <div class="card"><h3>2. Xây dựng Skill với Claude</h3><ul><li>Giới thiệu về Skill.</li><li>Quy trình xây dựng Skill từ chọn tác vụ đến skill hoàn chỉnh.</li><li>Thiết kế Skill cho dàn trang slide, báo cáo, công văn, tờ trình...</li></ul></div>
-        <div class="card"><h3>3. Thiết kế Landing Page</h3><ul><li>Giới thiệu về Landing Page.</li><li>Thiết kế landing page CV cá nhân, giới thiệu khóa học.</li><li>Thiết kế bài giảng dạng .html và public bằng GitHub.</li></ul></div>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
 
-  <section class="section dark" id="cach-hoc">
-    <div class="container">
-      <div class="eyebrow">Cách thức hoạt động</div><h2>Bạn sẽ học như thế nào?</h2>
-      <div class="steps" style="margin-top:32px">
-        <div class="step card"><div><h3>Tham gia khóa học</h3><p class="muted">Học theo hình thức Blended Learning: online qua Zoom và trực tiếp tại tầng G – Tòa nhà Thái Bình.</p></div></div>
-        <div class="step card"><div><h3>Thực hành trực tiếp</h3><p class="muted">Sử dụng công cụ AI để tạo slide, tinh chỉnh sản phẩm và làm landing page.</p></div></div>
-        <div class="step card"><div><h3>Hoàn thiện sản phẩm</h3><p class="muted">Mỗi học viên có sản phẩm sau đào tạo để nộp đánh giá.</p></div></div>
-        <div class="step card"><div><h3>Chấm điểm bằng AI</h3><p class="muted">Sản phẩm được chấm theo tiêu chí định trước, điểm đạt tối thiểu là 7/10.</p></div></div>
-      </div>
-    </div>
-  </section>
+<div class="container stats">
+<div class="stat"><b>3,5 giờ</b><br>Thời lượng</div>
+<div class="stat"><b>Slide + Landing Page</b><br>Đầu ra</div>
+<div class="stat"><b>7/10</b><br>Điểm đạt</div>
+<div class="stat"><b>06/05/2026</b><br>Hạn đăng ký</div>
+</div>
 
-  <section class="section" id="dau-ra">
-    <div class="container">
-      <div class="eyebrow">Yêu cầu đầu ra</div><h2>Hoàn thành khóa học bằng sản phẩm thực tế</h2>
-      <div class="grid grid-3" style="margin-top:32px">
-        <div class="card"><div class="score">7/10</div><h3>Điểm đạt tối thiểu</h3><p class="muted">Sản phẩm sau đào tạo được chấm bằng AI với tiêu chí định trước.</p></div>
-        <div class="card"><div class="score">8</div><h3>Slide bằng AI</h3><p class="muted">Tối thiểu 01 sản phẩm thiết kế slide bằng AI, tối đa 8 điểm.</p></div>
-        <div class="card"><div class="score">2</div><h3>Landing Page</h3><p class="muted">Có thêm 01 landing page, tối đa 2 điểm.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="container">
+<h2>Mục tiêu chương trình</h2>
+<div class="grid grid-3">
+<div class="card">Tạo slide nhanh bằng AI</div>
+<div class="card">Chuẩn hóa nội dung chuyên nghiệp</div>
+<div class="card">Ứng dụng vào công việc thực tế</div>
+</div>
+</section>
 
-  <section class="section" id="quyen-loi" style="background:#fff">
-    <div class="container">
-      <div class="eyebrow">Quyền lợi học viên</div><h2>Tài liệu, chứng nhận và bộ công cụ thực hành</h2>
-      <div class="grid grid-3" style="margin-top:32px">
-        <div class="card"><h3>Chứng nhận nội bộ</h3><p class="muted">Nhận chứng nhận hoàn thành nội bộ khi hoàn thành khóa học.</p></div>
-        <div class="card"><h3>Tài liệu chi tiết</h3><p class="muted">Tài liệu hướng dẫn đầy đủ lý thuyết và thực hành, đọc là có thể thực hành ngay.</p></div>
-        <div class="card"><h3>Prompt & tài liệu mở rộng</h3><p class="muted">Bộ template prompt mẫu dùng ngay và tài liệu mở rộng về Claude for Excel, Word, Extension Chrome.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="container">
+<h2>Nội dung đào tạo</h2>
+<div class="card">
+<p><b>Phần cơ bản:</b> Tạo slide bằng Claude, Gemini, Canva</p>
+<p><b>Phần nâng cao:</b> Xây dựng Skill, tạo báo cáo</p>
+<p><b>Landing Page:</b> Thiết kế và publish bằng GitHub</p>
+</div>
+</section>
 
-  <section class="section" id="dang-ky">
-    <div class="container contact">
-      <div>
-        <div class="eyebrow">Đăng ký tham gia</div><h2>Đăng ký ngay để tham gia chương trình</h2>
-        <p class="muted">Học viên điền form đăng ký gồm Mã nhân viên, Họ và tên; đồng thời hoàn thành khảo sát về kỹ năng ứng dụng AI và mục đích tham gia chương trình.</p>
-        <div class="cta-row"><a class="btn btn-red" href="#">Thay link form đăng ký tại đây</a><a class="btn btn-dark-outline" href="mailto:minhmn@viettel.com.vn">Liên hệ đầu mối</a></div>
-        <div class="deadline">Hạn cuối đăng ký: 06/05/2026</div>
-        <p class="note">[CẦN BỔ SUNG] Link form đăng ký chính thức.</p>
-      </div>
-      <div class="contact-box">
-        <div><strong>Người hướng dẫn:</strong> Đ/c Đỗ Thị Ngát – Phòng Nhân sự</div>
-        <div><strong>Đầu mối:</strong> Đ/c Mai Ngọc Minh</div>
-        <div><strong>Đơn vị:</strong> Phòng Nhân sự - Tổng Công ty Mạng lưới</div>
-        <div><strong>Điện thoại:</strong> 0989 208 017</div>
-        <div><strong>Email:</strong> minhmn@viettel.com.vn</div>
-      </div>
-    </div>
-  </section>
+<section class="container">
+<h2>Đăng ký tham gia</h2>
+<div class="card">
+<p>Liên hệ: Mai Ngọc Minh</p>
+<p>0989 208 017</p>
+<p>minhmn@viettel.com.vn</p>
+</div>
+</section>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><img src="assets/logo-light-bg.png" alt="Viettel Networks"><p class="note">Chương trình đào tạo nội bộ | Hướng dẫn tạo Slide bằng AI Cơ bản & Nâng cao</p></div>
-      <div>© 2026 Viettel Networks</div>
-    </div>
-  </footer>
+<footer>
+© 2026 Viettel Networks
+</footer>
+
 </body>
 </html>
